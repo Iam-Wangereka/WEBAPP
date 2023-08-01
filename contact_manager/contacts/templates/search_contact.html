@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Contact</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <h1>Search Contact</h1>
+    {% if error_message %}
+    <p class="error-message">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="registration_number">Registration Number:</label><br>
+        <input type="text" id="registration_number" name="registration_number" required><br>
+        <input type="submit" value="Search"><br>
+    </form>
+    <h2><a href="{% url 'contact_list' %}">Back To List</a></h2>
+    <h2><a href="{% url 'user_login' %}">Log Out</a></h2>
+</body>
+</html>
