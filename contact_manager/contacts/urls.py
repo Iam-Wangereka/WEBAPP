@@ -9,8 +9,9 @@ from . import views
 urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     # path('login/', views.CustomLoginView.as_view(), name='login'),
-    path('login/', views.user_login, name='login'),
-    path('login/', auth_views.LoginView.as_view(template_name='users/login.html', redirect_authenticated_user=True),name='login'),
+    # path('index/', views.user_login, name='login'),
+    # path('', views.user_login, name='user_login'),
+    path('index/', auth_views.LoginView.as_view(template_name='users/index.html', redirect_authenticated_user=True),name='login'),
 
     path('signup/', views.signup, name='signup'),
 

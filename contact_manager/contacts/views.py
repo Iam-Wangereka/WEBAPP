@@ -30,7 +30,7 @@ from django.http import HttpResponse
 
 
 class CustomLoginView(LoginView):
-    template_name = 'login.html'  # Create a template for login page
+    template_name = 'index.html'  # Create a template for login page
     # Add any customizations as needed
 
 class CustomPasswordResetView(PasswordResetView):
@@ -87,7 +87,7 @@ def user_login(request):
             messages.error(request, 'Invalid username or password. Please try again.')
             return redirect('login')
     else:
-        return render(request, 'login.html')
+        return render(request, 'index.html')
     
 def logout_view(request):
     logout(request)
