@@ -21,8 +21,8 @@
             <p>Email: {{ contact.email }}</p><br>
             <p>Address: {{ contact.address }}</p><br>
         {% endif %}
-        <h2><a href="{% url 'user_login' %}">Log Out</a></form><h2>
         </form>
+        <h2><a href="{% url 'contact_list' %}">Back To Contact List</a></form><h2>
         <h2><a href="{% url 'user_login' %}">Log Out</a></form><h2>
         </div>
     </body>
