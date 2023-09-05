@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact List</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <style>
+        /* Additional CSS styles for the contact list */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Contact List</h1>
+    <h2><a href="{% url 'search_contact' %}">Search Contact</a></h2>
+    <ul>
+        {% for contact in contacts %}
+            <li>
+                <div class="contact-info">
+                    <p><strong>Registration Number:</strong> {{ contact.registration_number }}</p>
+                    <p><strong>Mobile:</strong> {{ contact.mobile }}</p>
+                    <p><strong>Email:</strong> {{ contact.email }}</p>
+                    <p><strong>Address:</strong> {{ contact.address }}</p>
+                </div>
+                <!-- Only the admin or other superusers can delete a contactt -->
+                {% if user.is_superuser %}
+                    <form method="post" action="{% url 'delete_contact' contact.id %}">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete">
+                    </form>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <h2><a href="{% url 'user_login' %}">Log Out</a></h2>
+</body>
+</html>

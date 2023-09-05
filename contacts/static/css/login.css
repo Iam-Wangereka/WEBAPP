@@ -1,0 +1,83 @@
+/* login.css */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: url("../img/background.jpg");
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 36px;
+  color: #007bff;
+}
+
+form {
+  overflow: hidden;
+  /* position: absolute; */
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: solid black;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
+  /* display: flex; */
+  width: 300px;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+a {
+  text-align: center;
+  display: block;
+  /* margin-top: 15px; */
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+ul {
+  line-height: 1.5em;
+  margin: 5px 0 15px;
+  padding: 0;
+  list-style: none; 
+}
+
+li {
+  position: relative;
+  padding: 5px 0;
+}
